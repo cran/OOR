@@ -56,7 +56,7 @@ fun1 <- function(x) return(-guirland(x))
 ## Optimization
 Sol1 <- StoSOO(par = NA, fn = fun1, nb_iter = 1000, control = list(type = "det", verbose = 1))
 
-## Display objective function and solution fund
+## Display objective function and solution found
 curve(fun1, n = 1001)
 abline(v = Sol1$par, col = 'red')
 
