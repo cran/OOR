@@ -4,9 +4,15 @@
 \alias{StoSOO}
 \title{StoSOO and SOO algorithms}
 \usage{
-StoSOO(par, fn, ..., lower = rep(0, length(par)), upper = rep(1,
-  length(par)), nb_iter, control = list(verbose = 0, type = "sto", max =
-  FALSE, light = TRUE))
+StoSOO(
+  par,
+  fn,
+  ...,
+  lower = rep(0, length(par)),
+  upper = rep(1, length(par)),
+  nb_iter,
+  control = list(verbose = 0, type = "sto", max = FALSE, light = TRUE)
+)
 }
 \arguments{
 \item{par}{vector with length defining the dimensionality of the optimization problem.

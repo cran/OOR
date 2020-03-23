@@ -3,7 +3,6 @@
 \docType{package}
 \name{OOR}
 \alias{OOR}
-\alias{OOR-package}
 \title{Package OOR}
 \description{
 This package implements optimistic optimization methods [1,2,3] for global optimization of deterministic or stochastic functions.

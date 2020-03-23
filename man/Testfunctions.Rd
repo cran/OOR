@@ -4,7 +4,6 @@
 \alias{Test functions}
 \alias{guirland}
 \alias{sin1}
-\alias{sin1}
 \alias{difficult}
 \alias{difficult2}
 \alias{double_sine}
