@@ -3,6 +3,7 @@
 \docType{package}
 \name{OOR}
 \alias{OOR}
+\alias{OOR-package}
 \title{Package OOR}
 \description{
 This package implements optimistic optimization methods [1,2,3] for global optimization of deterministic or stochastic functions.
@@ -76,9 +77,9 @@ abline(v = Sol3$par)
 [1] R. Munos (2011), Optimistic optimization of deterministic functions without the knowledge of its smoothness,
 \emph{NIPS}, 783-791. \cr \cr
 [2] M. Valko, A. Carpentier and R. Munos (2013), Stochastic Simultaneous Optimistic Optimization,
-\emph{ICML}, 19-27 \url{http://hal.inria.fr/hal-00789606}. \cr \cr
+\emph{ICML}, 19-27 \url{https://inria.hal.science/hal-00789606}. \cr \cr
 [3] J.-B. Grill, M. Valko and R. Munos (2015), Black-box optimization of noisy functions with unknown smoothness,
-  \emph{NIPS}, 667-675 \url{https://hal.inria.fr/hal-01222915}. \cr \cr
+  \emph{NIPS}, 667-675 \url{https://inria.hal.science/hal-01222915}. \cr \cr
 [4] S. Samothrakis, D. Perz, S. Lucas (2013), Training gradient boosting machines using curve-fitting and information-theoretic features for causal direction detection,
 \emph{NIPS Workshop on Causality}.
 }

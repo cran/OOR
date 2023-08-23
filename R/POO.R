@@ -1,50 +1,50 @@
-##' Global optimization of a blackbox function given a finite budget of noisy evaluations,
-##' via the Parallel Optimistic Optimization algorithm.
-##' The knowledge of the function's smoothness is not required.
-##' @title Parallel Optimistic Optimization
-##' @param f function to maximize.
-##' @param horizon maximum number of function evaluations.
-##' @param nu scalar (> 0) assessing the complexity of the function, along with \code{rho} (see the near optimality definition in the reference below).
-##' @param rhomax number of equidistant \code{rho} values in [0,1], that are used by the corresponding HOO subroutines, see Details.
-##' @param noise.level scalar bound on the noise value.
-##' @details Only 1-dimensional functions defined on [0, 1] are handled so far.
-##' POO uses Hierarchical Optimistic Optimisation (HOO) as a subroutine, whose number is set by \code{rhomax}.
-##' \code{POO} handles more difficult functions than \code{\link[OOR]{StoSOO}}.
-##' @return Random point evaluated by the best HOO, in the form of a list with elements:
-##' \itemize{
-##'  \item par parameter value at this point,
-##'  \item value noisy value at \code{par},
-##'  \item best_rho best \code{rho} value.
-##' }
-##' @export
-##' @importFrom methods new
-##' @importFrom stats runif
-##' @author
-##' M. Binois (translation in R code), J.-B. Grill, M. Valko and R. Munos (Python code)
-##' @references
-##' J.-B. Grill, M. Valko and R. Munos (2015), Black-box optimization of noisy functions with unknown smoothness,
-##'   \emph{NIPS}, 667-675 \url{https://hal.inria.fr/hal-01222915}. Python code: \url{https://team.inria.fr/sequel/software/POO}.
-##' @examples
-##' \dontrun{
-##' #------------------------------------------------------------
-##' # Maximization with POO
-##' #------------------------------------------------------------
-##' set.seed(10)
-##' noise.level <- 0.05
+#' Global optimization of a blackbox function given a finite budget of noisy evaluations,
+#' via the Parallel Optimistic Optimization algorithm.
+#' The knowledge of the function's smoothness is not required.
+#' @title Parallel Optimistic Optimization
+#' @param f function to maximize.
+#' @param horizon maximum number of function evaluations.
+#' @param nu scalar (> 0) assessing the complexity of the function, along with \code{rho} (see the near optimality definition in the reference below).
+#' @param rhomax number of equidistant \code{rho} values in [0,1], that are used by the corresponding HOO subroutines, see Details.
+#' @param noise.level scalar bound on the noise value.
+#' @details Only 1-dimensional functions defined on [0, 1] are handled so far.
+#' POO uses Hierarchical Optimistic Optimisation (HOO) as a subroutine, whose number is set by \code{rhomax}.
+#' \code{POO} handles more difficult functions than \code{\link[OOR]{StoSOO}}.
+#' @return Random point evaluated by the best HOO, in the form of a list with elements:
+#' \itemize{
+#'  \item par parameter value at this point,
+#'  \item value noisy value at \code{par},
+#'  \item best_rho best \code{rho} value.
+#' }
+#' @export
+#' @importFrom methods new
+#' @importFrom stats runif
+#' @author
+#' M. Binois (translation in R code), J.-B. Grill, M. Valko and R. Munos (Python code)
+#' @references
+#' J.-B. Grill, M. Valko and R. Munos (2015), Black-box optimization of noisy functions with unknown smoothness,
+#'   \emph{NIPS}, 667-675 \url{https://inria.hal.science/hal-01222915}. Python code: \url{https://team.inria.fr/sequel/software/POO/}.
+#' @examples
+#' \dontrun{
+#' #------------------------------------------------------------
+#' # Maximization with POO
+#' #------------------------------------------------------------
+#' set.seed(10)
+#' noise.level <- 0.05
 ## ' XX <- c(NA)
-##'
-##' ## Define and display objective
+#'
+#' ## Define and display objective
 ## ' ftest <- function(x){XX <<- c(XX, x); return(double_sine(x) + runif(1, min = -noise.level, max = noise.level))}
-##' ftest <- function(x){return(double_sine(x) + runif(1, min = -noise.level, max = noise.level))}
-##' xgrid <- seq(0, 1, length.out = 1000)
-##' plot(xgrid, sapply(xgrid, double_sine), type = 'l', ylab = "double_sine(x)", xlab = 'x')
-##'
-##' ## Optimization
-##' Sol <- POO(ftest, horizon = 1000, noise.level = noise.level)
-##'
-##' ## Display result
-##' abline(v = Sol$par)
-##'}
+#' ftest <- function(x){return(double_sine(x) + runif(1, min = -noise.level, max = noise.level))}
+#' xgrid <- seq(0, 1, length.out = 1000)
+#' plot(xgrid, sapply(xgrid, double_sine), type = 'l', ylab = "double_sine(x)", xlab = 'x')
+#'
+#' ## Optimization
+#' Sol <- POO(ftest, horizon = 1000, noise.level = noise.level)
+#'
+#' ## Display result
+#' abline(v = Sol$par)
+#'}
 POO <- function(f, horizon = 100, noise.level, rhomax = 20, nu = 1){
   alpha <- log(horizon)*noise.level^2
   rhos <- seq(0, 1, length.out = rhomax)
@@ -90,8 +90,8 @@ Tree <- function(support, father, depth, rhos, fun){
 # ## TREE CLASS definition
 # ## ----------------
 #
-# ##' S3 Tree Class
-# ##' @export
+# #' S3 Tree Class
+# #' @export
 # setClass("Tree", representation(tree = "list", fun = "function"))
 
 std_split <- function(support){
@@ -311,8 +311,8 @@ setClass("Leaf",
 }
 
 
-# ##' S3 Box Class
-# ##' @export
+# #' S3 Box Class
+# #' @export
 # setClass("Box",
 #          representation(
 #            support = "numeric",

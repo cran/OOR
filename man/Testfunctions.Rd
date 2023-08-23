@@ -46,7 +46,7 @@ par(mfrow = c(1,1))
 }
 \references{
 M. Valko, A. Carpentier and R. Munos (2013), Stochastic Simultaneous Optimistic Optimization,
-\emph{ICML}, 19-27 \url{http://hal.inria.fr/hal-00789606}. Matlab code: \url{https://team.inria.fr/sequel/software/StoSOO}. \cr \cr
+\emph{ICML}, 19-27 \url{https://inria.hal.science/hal-00789606}. Matlab code: \url{https://team.inria.fr/sequel/software/StoSOO/}. \cr \cr
 J.-B. Grill, M. Valko and R. Munos (2015), Black-box optimization of noisy functions with unknown smoothness,
-  \emph{NIPS}, 667-675 \url{https://hal.inria.fr/hal-01222915}. Python code: \url{https://team.inria.fr/sequel/software/POO}. \cr \cr
+  \emph{NIPS}, 667-675 \url{https://inria.hal.science/hal-01222915}. Python code: \url{https://team.inria.fr/sequel/software/POO/}. \cr \cr
 }

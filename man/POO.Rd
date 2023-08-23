@@ -57,7 +57,7 @@ abline(v = Sol$par)
 }
 \references{
 J.-B. Grill, M. Valko and R. Munos (2015), Black-box optimization of noisy functions with unknown smoothness,
-  \emph{NIPS}, 667-675 \url{https://hal.inria.fr/hal-01222915}. Python code: \url{https://team.inria.fr/sequel/software/POO}.
+  \emph{NIPS}, 667-675 \url{https://inria.hal.science/hal-01222915}. Python code: \url{https://team.inria.fr/sequel/software/POO/}.
 }
 \author{
 M. Binois (translation in R code), J.-B. Grill, M. Valko and R. Munos (Python code)
